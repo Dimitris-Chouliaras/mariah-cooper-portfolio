@@ -1,0 +1,65 @@
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--second-bg-color);
+}
+
+.faq-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 1rem 0 3rem 0;
+    line-height: 1;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--second-bg-color);
+    height: 500px;
+    text-align: center;
+    border-radius: 3rem;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.faq h2 {
+    font-size: 2.6rem;
+    margin: 2rem 0;
+    font-weight: 800;
+    padding: 1rem;
+}
+
+.faq p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 600;
+    padding: 1rem;
+    opacity: 0;  /* Initially hidden */
+    height: 0;   /* Ensure it's hidden */
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease; /* Smooth transition for opacity and height */
+}
+
+.faq.active {
+    background: var(--second-bg-color);
+    color: var(--main-color);
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+
+/* Active state for when the FAQ is clicked */
+.faq.active p {
+    opacity: 1;   /* Show the text */
+    height: auto; /* Adjust height to fit the content */
+}
